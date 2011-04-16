@@ -420,7 +420,8 @@ function setupSettingPanel(settingDiv, settingOpener, api, options) {
             c_cpp:      "C++",
             php:        "PHP",
             ruby:       "Ruby",
-            python:     "Python"
+            python:     "Python",
+            webdsl:     "WebDSL"
 
         },
         theme: {

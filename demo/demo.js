@@ -65,6 +65,7 @@ exports.launch = function(env) {
     var SvgMode = require("ace/mode/svg").Mode;
     var TextileMode = require("ace/mode/textile").Mode;
     var TextMode = require("ace/mode/text").Mode;
+    var WebDSLMode = require("ace/mode/webdsl").Mode;
     var UndoManager = require("ace/undomanager").UndoManager;
 
     var vim = require("ace/keyboard/keybinding/vim").Vim;
@@ -152,6 +153,10 @@ exports.launch = function(env) {
     docs.textile.setMode(new TextileMode());
     docs.textile.setUndoManager(new UndoManager());
 
+    docs.webdsl= new EditSession(document.getElementById("webdsltext").innerHTML);
+    docs.webdsl.setMode(new WebDSLMode());
+    docs.webdsl.setUndoManager(new UndoManager());
+
     var container = document.getElementById("editor");
     env.editor = new Editor(new Renderer(container, theme));
 
@@ -171,7 +176,8 @@ exports.launch = function(env) {
         coffee: new CoffeeMode(),
         perl: new PerlMode(),
         ocaml: new OcamlMode(),
-        csharp: new CSharpMode()
+        csharp: new CSharpMode(),
+        webdsl: new WebDSLMode()
     };
 
     function getMode() {
@@ -230,6 +236,9 @@ exports.launch = function(env) {
         }
         else if (mode instanceof TextileMode) {
             modeEl.value = "textile";
+        }
+        else if (mode instanceof WebDSLMode) {
+            modeEl.value = "webdsl";
         }
         else {
             modeEl.value = "text";

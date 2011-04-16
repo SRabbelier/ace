@@ -161,7 +161,7 @@ console.log('# ace modes ---------');
 project.assumeAllFilesLoaded();
 [
     "css", "html", "javascript", "php", "python", "xml", "ruby", "java", "c_cpp",
-    "coffee", "perl", "csharp", "svg", "clojure"
+    "coffee", "perl", "csharp", "svg", "clojure", "webdsl"
 ].forEach(function(mode) {
     console.log("mode " + mode);
     copy({
@@ -191,7 +191,9 @@ copy({
                 'pilot/fixoldbrowsers',
                 'pilot/event_emitter',
                 'pilot/oop',
-                'ace/mode/javascript_worker'
+                'ace/jssglr',
+                'ace/mode/javascript_worker',
+                'ace/mode/webdsl_worker'
             ]
         })
     ],

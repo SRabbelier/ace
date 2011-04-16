@@ -14,6 +14,7 @@
       <td align="right">
         <label for="doc">Document:</label>
         <select id="doc" size="1">
+          <option value="webdsl">WebDSL Document</option>
           <option value="js">JavaScript Document</option>
           <option value="plain">Text Document</option>
           <option value="svg">SVG Document</option>
@@ -105,6 +106,7 @@
           <option value="csharp">C-Sharp</option>
           <option value="svg">SVG</option>
           <option value="textile">Textile</option>
+          <option value="webdsl">WebDSL</option>
         </select>
       </td>
       <td align="right">
@@ -472,6 +474,17 @@ bg. Blockquote!
     This is a two-list blockquote..!
 
 </script>
+
+
+<script type="text/editor" id="webdsltext">application helloworld
+
+imports hello
+
+init {
+	var hello := Hello {
+		name := "Hello World"
+	};
+}</script>
 
   <input id="cockpitInput" type="text"/>
 
